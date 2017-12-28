@@ -31,6 +31,14 @@ public class Empleado {
         this.nombredepto=nombredepto;
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
     public String getRut() {
         return rut;
     }

@@ -58,6 +58,7 @@ public class Controlador implements ActionListener, MouseListener {
         BtnEliminarListar,
         BtnVoleverListar,
         MenuSalir,
+        BtnAgregarEmpleado,
       
         BtnConsulta1,
         BtnConsulta2,
@@ -242,20 +243,18 @@ public class Controlador implements ActionListener, MouseListener {
 
                 if (this.modelo.modificaEmpleado(
                         Integer.parseInt(this.vistalist.TxtCodigoListar.getText()),
-                       Integer.parseInt( this.vistalist.TxtRutListar.getText()),
+                       this.vistalist.TxtRutListar.getText(),
                        this.vistalist.TxtNombreListar.getText(),
                        this.vistalist.TxtApellidoListar.getText(),
-                        
                         Integer.parseInt(this.vistalist.TxtCelularListar.getText()),
                         this.vistalist.TxtEmailListar.getText(),
-                        
                         Integer.parseInt(this.vistalist.TxtSueldoBrutoListar.getText()),
                         this.vistalist.TxtEstadoCivilListar.getText(),
- //                       Integer.parseInt(this.vistalist.CBoxDeptoListar.getSelectedItem().toString()),
-                        
-           
-                      this.vistalist.TablaListarEmpleado.setModel(this.modelo.ListadoProducto()); //actualiza JTable
-                    JOptionPane.showMessageDialog(null, "Producto actualizado");
+                        this.vistalist.CBoxDeptoListar.getSelectedItem().toString()))
+                {this.vistalist.TablaListarEmpleado.setModel(this.modelo.ListadoProducto()); //actualiza JTable
+                }
+                
+                        JOptionPane.showMessageDialog(null, "Producto actualizado");
                     //Limpiamos textField
                     this.vistalist.TxtCodigoListar.setText("");
                     this.vistalist.TxtRutListar.setText("");
@@ -269,20 +268,20 @@ public class Controlador implements ActionListener, MouseListener {
                     
                     
 
-                }
-                break;
+        
+//                break;
 
-            case BtnAgregarAgregar:
+            case BtnAgregarEmpleado:
                 //añade un nuevo registro
 
                 if (this.modelo.NuevoProducto(
                         Integer.parseInt(this.vistaAgregar.TxtCodigo.getText()),
-                        Integer.parseInt(this.vistaAgregar.TxtRut.getText()),
+                        this.vistaAgregar.TxtRut.getText(),
                         this.vistaAgregar.TxtNombre.getText(),
                         this.vistaAgregar.TxtApellido.getText(),
                         Integer.parseInt(this.vistaAgregar.TxtCelular.getText()),
                         this.vistaAgregar.TxtEmail.getText(),
-                        Integer.parseInt(this.vistaAgregar.TxtSueldoBruto.getText()),
+                        Integer.parseInt(this.vistaAgregar.TxtSueldo.getText()),
                         this.vistaAgregar.TxtEstadoCivil.getText(),
                         this.vistaAgregar.CBoxDepto.getSelectedItem().toString() ))
                         
@@ -361,9 +360,9 @@ public class Controlador implements ActionListener, MouseListener {
                         columna[3] = modelo.buscarPorCodigo(codigo).get(i).getApellido();
                         columna[4] = modelo.buscarPorCodigo(codigo).get(i).getCelular();
                         columna[5] = modelo.buscarPorCodigo(codigo).get(i).getEmail();
-                        columna[6] = modelo.buscarPorCodigo(codigo).get(i).getSueldoBruto();
-                        columna[7] = modelo.buscarPorCodigo(codigo).get(i).getEstadoCivil();
-                        columna[8] = modelo.buscarPorCodigo(codigo).get(i).getNombreDepto();
+                        columna[6] = modelo.buscarPorCodigo(codigo).get(i).getSueldo();
+                        columna[7] = modelo.buscarPorCodigo(codigo).get(i).getEstadocivil();
+                        columna[8] = modelo.buscarPorCodigo(codigo).get(i).getNombredepto();
                   
                         modeloT.addRow(columna);
                     }
@@ -382,7 +381,7 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaAgregar.TxtApellido.setText("");
                 this.vistaAgregar.TxtCelular.setText("");
                 this.vistaAgregar.TxtEmail.setText("");
-                this.vistaAgregar.TxtSueldoBruto.setText("");
+                this.vistaAgregar.TxtSueldo.setText("");
                 this.vistaAgregar.TxtEstadoCivil.setText("");
                 this.vistaAgregar.CBoxDepto.setSelectedIndex(0);
                 this.vistaAgregar.TxtCodigo.setFocusable(true);
@@ -398,10 +397,10 @@ public class Controlador implements ActionListener, MouseListener {
                 this.vistaAgregar.TxtCodigo.setText("");
                 this.vistaAgregar.TxtRut.setText("");
                 this.vistaAgregar.TxtNombre.setText("");
-                 this.vistaAgregar.TxtApellido.setText("");
+                this.vistaAgregar.TxtApellido.setText("");
                 this.vistaAgregar.TxtCelular.setText("");
                 this.vistaAgregar.TxtEmail.setText("");
-                this.vistaAgregar.TxtSueldoBruto.setText("");
+                this.vistaAgregar.TxtSueldo.setText("");
                 this.vistaAgregar.TxtEstadoCivil.setText("");
                 this.vistaAgregar.CBoxDepto.setSelectedIndex(0);
                 this.vistaAgregar.TxtCodigo.setFocusable(true);
@@ -467,6 +466,6 @@ public class Controlador implements ActionListener, MouseListener {
         }
         
    }
-
+}
 
 

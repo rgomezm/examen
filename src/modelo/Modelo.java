@@ -6,13 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
+//import javax.swing.ComboBoxModel;
+//import javax.swing.DefaultComboBoxModel;
+//import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import modelo.Empleado;
-import javax.swing.JComboBox;
 
 
 
@@ -52,17 +50,23 @@ public class Modelo extends Conexion {
      
      
          //Metodo para validar datos
-    private boolean valida_datos(int codigo,String rut,String nombre,String apellido,
+           private boolean valida_datos(int codigo,String rut,String nombre,String apellido,
             int celular,String email,int sueldo,String estadocivil,String nombredepto) {
-        if (codigo > 0 && codigo <=100) {
+            if (codigo > 0 && codigo <=100) {
             return false;
- //       } else if (nombre.?() && sueldo >= 120000 && (estadocivil.equals("S")||estadocivil.equals("C")||estadocivil.equals("V")&& rut ? && celular.length()=9)) {
+           } 
+            else if sueldo >= 120000 && (estadocivil.equals("S")||estadocivil.equals("C")||estadocivil.equals("V")&& celular.length()=9)) {
 
- //           return true;
-        } else {
+          return true;
+          
+          else if (nombre.equals("")) {
+            JOptionPane.showMessageDialog(null, "Debe ingresar un Nombre");
             return false;
-        }
-    }
+        } }return false;
+}
+       
+    
+           
      
          //Modificar producto seleccionado
     public boolean modificaEmpleado(int codigo,String rut,String nombre,String apellido,
@@ -193,6 +197,14 @@ public class Modelo extends Conexion {
         }
         return false;
         }
+
+    public Object buscarNombreDepto(String NombreDepto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object buscarPorNombreDepto(String NombreDepto) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
      }

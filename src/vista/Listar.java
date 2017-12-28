@@ -55,7 +55,7 @@ public class Listar extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         TxtSueldoBrutoListar = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        TxtNombreDeptoListar = new javax.swing.JTextField();
+        CmbDeptoListar = new javax.swing.JComboBox<>();
         BtnVoleverListar = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
@@ -70,7 +70,7 @@ public class Listar extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Rut", "Nombre", "Apellido", "Celular", "Email", "Sueldo_Bruto", "Estado_Civil", "Nombre_Depto"
+                "Codigo", "Rut", "Nombre", "Apellido", "Celular", "Email", "SueldoBruto", "EstadoCivil", "NombreDepto"
             }
         ));
         jScrollPane1.setViewportView(TablaListarEmpleado);
@@ -108,6 +108,8 @@ public class Listar extends javax.swing.JFrame {
         jLabel9.setText("Sueldo Bruto");
 
         jLabel10.setText("Nombre Depto");
+
+        CmbDeptoListar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija Departamento", "Informatica", "Redes", "Administración", "Finanzas", "Bienestar" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,11 +160,12 @@ public class Listar extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(BtnModificar)))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TxtEstadoCivilListar, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
-                    .addComponent(TxtEmailListar)
-                    .addComponent(TxtSueldoBrutoListar)
-                    .addComponent(TxtNombreDeptoListar))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(TxtEstadoCivilListar, javax.swing.GroupLayout.DEFAULT_SIZE, 99, Short.MAX_VALUE)
+                        .addComponent(TxtEmailListar)
+                        .addComponent(TxtSueldoBrutoListar))
+                    .addComponent(CmbDeptoListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54))
         );
         jPanel1Layout.setVerticalGroup(
@@ -198,8 +201,8 @@ public class Listar extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(TxtCelularListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TxtNombreDeptoListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addComponent(CmbDeptoListar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnEliminarListar)
@@ -224,7 +227,7 @@ public class Listar extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(BtnVoleverListar)
@@ -295,13 +298,13 @@ public class Listar extends javax.swing.JFrame {
     public javax.swing.JButton BtnListarListar;
     public javax.swing.JButton BtnModificar;
     public javax.swing.JButton BtnVoleverListar;
+    public javax.swing.JComboBox<String> CmbDeptoListar;
     public javax.swing.JTable TablaListarEmpleado;
     public javax.swing.JTextField TxtApellidoListar;
     public javax.swing.JTextField TxtCelularListar;
     public javax.swing.JTextField TxtCodigoListar;
     public javax.swing.JTextField TxtEmailListar;
     public javax.swing.JTextField TxtEstadoCivilListar;
-    public javax.swing.JTextField TxtNombreDeptoListar;
     public javax.swing.JTextField TxtNombreListar;
     public javax.swing.JTextField TxtRutListar;
     public javax.swing.JTextField TxtSueldoBrutoListar;
